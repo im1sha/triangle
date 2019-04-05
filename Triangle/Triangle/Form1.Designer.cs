@@ -44,10 +44,10 @@
             this.buttonCalculate.Location = new System.Drawing.Point(33, 197);
             this.buttonCalculate.Name = "buttonCalculate";
             this.buttonCalculate.Size = new System.Drawing.Size(345, 34);
-            this.buttonCalculate.TabIndex = 0;
+            this.buttonCalculate.TabIndex = 4;
             this.buttonCalculate.Text = "Определить тип треугольника";
             this.buttonCalculate.UseVisualStyleBackColor = true;
-            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculateClick);
+            this.buttonCalculate.Click += new System.EventHandler(this.OnCalculate);
             // 
             // labelA
             // 
@@ -82,8 +82,8 @@
             this.textBoxA.Name = "textBoxA";
             this.textBoxA.ShortcutsEnabled = false;
             this.textBoxA.Size = new System.Drawing.Size(265, 22);
-            this.textBoxA.TabIndex = 4;
-            this.textBoxA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.handleKeyPress);
+            this.textBoxA.TabIndex = 1;
+            this.textBoxA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
             // 
             // textBoxB
             // 
@@ -91,8 +91,8 @@
             this.textBoxB.Name = "textBoxB";
             this.textBoxB.ShortcutsEnabled = false;
             this.textBoxB.Size = new System.Drawing.Size(265, 22);
-            this.textBoxB.TabIndex = 5;
-            this.textBoxB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.handleKeyPress);
+            this.textBoxB.TabIndex = 2;
+            this.textBoxB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
             // 
             // textBoxC
             // 
@@ -100,8 +100,8 @@
             this.textBoxC.Name = "textBoxC";
             this.textBoxC.ShortcutsEnabled = false;
             this.textBoxC.Size = new System.Drawing.Size(265, 22);
-            this.textBoxC.TabIndex = 6;
-            this.textBoxC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.handleKeyPress);
+            this.textBoxC.TabIndex = 3;
+            this.textBoxC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
             // 
             // labelHeader
             // 

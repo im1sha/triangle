@@ -18,13 +18,13 @@ namespace Triangle
             InitializeComponent();
         }
 
-        private void buttonCalculateClick(object sender, EventArgs e)
+        private void OnCalculate(object sender, EventArgs e)
         {
             var triangle = new Shape();
 
             ulong a = 0, b = 0, c = 0;
 
-            bool areLengthsPositive = havePositiveLength(new[] { textBoxA.Text, textBoxB.Text, textBoxC.Text });
+            bool areLengthsPositive = HavePositiveLength(new[] { textBoxA.Text, textBoxB.Text, textBoxC.Text });
 
             if (areLengthsPositive)
             {
@@ -71,7 +71,7 @@ namespace Triangle
             }
         }
 
-        private void handleKeyPress(object sender, KeyPressEventArgs e)
+        private void OnKeyPress(object sender, KeyPressEventArgs e)
         {       
 
             if (e.KeyChar == (char)8)
@@ -90,12 +90,10 @@ namespace Triangle
             }          
         }
 
-        private bool havePositiveLength(string[] strs)
+        private bool HavePositiveLength(string[] strs)
         {
             return strs.All(str => str != null && str.Length > 0);
         }
-
-
     }
 }
 
