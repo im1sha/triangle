@@ -43,7 +43,7 @@
             // 
             this.buttonCalculate.Location = new System.Drawing.Point(33, 197);
             this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.Size = new System.Drawing.Size(345, 34);
+            this.buttonCalculate.Size = new System.Drawing.Size(426, 34);
             this.buttonCalculate.TabIndex = 4;
             this.buttonCalculate.Text = "Определить тип треугольника";
             this.buttonCalculate.UseVisualStyleBackColor = true;
@@ -81,7 +81,7 @@
             this.textBoxA.Location = new System.Drawing.Point(113, 71);
             this.textBoxA.Name = "textBoxA";
             this.textBoxA.ShortcutsEnabled = false;
-            this.textBoxA.Size = new System.Drawing.Size(265, 22);
+            this.textBoxA.Size = new System.Drawing.Size(346, 22);
             this.textBoxA.TabIndex = 1;
             this.textBoxA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
             // 
@@ -90,7 +90,7 @@
             this.textBoxB.Location = new System.Drawing.Point(113, 112);
             this.textBoxB.Name = "textBoxB";
             this.textBoxB.ShortcutsEnabled = false;
-            this.textBoxB.Size = new System.Drawing.Size(265, 22);
+            this.textBoxB.Size = new System.Drawing.Size(346, 22);
             this.textBoxB.TabIndex = 2;
             this.textBoxB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
             // 
@@ -99,7 +99,7 @@
             this.textBoxC.Location = new System.Drawing.Point(113, 154);
             this.textBoxC.Name = "textBoxC";
             this.textBoxC.ShortcutsEnabled = false;
-            this.textBoxC.Size = new System.Drawing.Size(265, 22);
+            this.textBoxC.Size = new System.Drawing.Size(346, 22);
             this.textBoxC.TabIndex = 3;
             this.textBoxC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
             // 
@@ -107,9 +107,9 @@
             // 
             this.labelHeader.AutoSize = true;
             this.labelHeader.Location = new System.Drawing.Point(30, 18);
-            this.labelHeader.MaximumSize = new System.Drawing.Size(350, 0);
+            this.labelHeader.MaximumSize = new System.Drawing.Size(420, 0);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(348, 34);
+            this.labelHeader.Size = new System.Drawing.Size(397, 34);
             this.labelHeader.TabIndex = 7;
             this.labelHeader.Text = "Введите стороны треугольника, затем нажмите на кнопку \"Определить тип треугольник" +
     "а\"";
@@ -117,7 +117,8 @@
             // labelOutput
             // 
             this.labelOutput.AutoSize = true;
-            this.labelOutput.Location = new System.Drawing.Point(30, 247);
+            this.labelOutput.Location = new System.Drawing.Point(30, 241);
+            this.labelOutput.MaximumSize = new System.Drawing.Size(420, 0);
             this.labelOutput.Name = "labelOutput";
             this.labelOutput.Size = new System.Drawing.Size(0, 17);
             this.labelOutput.TabIndex = 8;
@@ -126,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 282);
+            this.ClientSize = new System.Drawing.Size(486, 316);
             this.Controls.Add(this.labelOutput);
             this.Controls.Add(this.labelHeader);
             this.Controls.Add(this.textBoxC);
