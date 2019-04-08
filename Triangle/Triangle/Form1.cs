@@ -11,6 +11,10 @@ using Triangle.Logic;
 
 namespace Triangle
 {
+
+      
+
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -20,7 +24,7 @@ namespace Triangle
 
         private void OnCalculate(object sender, EventArgs e)
         {
-            var triangle = new Shape();
+            var determiner = new TypeDeterminer();
 
             ulong a = 0, b = 0, c = 0;
 
@@ -33,7 +37,7 @@ namespace Triangle
                 c = Convert.ToUInt64(textBoxC.Text);
             }
             else
-            {
+            { 
                 MessageBox.Show("Введите числовые значения длин для трех сторон треугольника. Значения длин сторон должны принадлежать промежутку от 1 до 9223372036854775807",
                                "Ошибка ввода",
                                MessageBoxButtons.OK,
@@ -42,7 +46,7 @@ namespace Triangle
                 return;
             }
                             
-            if (!triangle.AreSidesInBounds(new[] { a, b, c }))
+            if (!determiner.AreSidesInBounds(new[] { a, b, c }))
             {
                 MessageBox.Show("Значения длин сторон должны принадлежать промежутку от 1 до 9223372036854775807",
                                "Ошибка ввода",
@@ -52,27 +56,37 @@ namespace Triangle
                 return;
             }
 
-            if (triangle.IsEquilateral(a, b, c))
+
+            labelOutput.Text = GetResultString(determiner, a, b, c);
+        }
+
+        private string GetResultString(TypeDeterminer determiner, ulong a, ulong b, ulong c)
+        {
+            string result;
+
+            if (!determiner.IsValidTriangle(a, b, c))
             {
-                labelOutput.Text = "Равносторонний треугольник";
+                result =  "Введите такие значения длин сторон, для которых верно: сумма любых двух сторон больше третьей стороны";
             }
-            else if (triangle.IsIsosceles(a, b, c))
+            else if (determiner.IsEquilateral(a, b, c))
             {
-                labelOutput.Text = "Равнобедренный треугольник";
+                result = "Равносторонний треугольник";
             }
-            else if (triangle.IsValidTriangle(a, b, c))
+            else if (determiner.IsIsosceles(a, b, c))
             {
-                labelOutput.Text = "Неравносторонний треугольник";
+                result = "Равнобедренный треугольник";
             }
             else
             {
-                labelOutput.Text = "Введите такие значения длин сторон, для которых верно: сумма любых двух сторон больше третьей стороны. Значения длин сторон должны принадлежать промежутку от 1 до 9223372036854775807";
+                result = "Неравносторонний треугольник";
             }
+
+            return result;
         }
+
 
         private void OnKeyPress(object sender, KeyPressEventArgs e)
         {       
-
             if (e.KeyChar == (char)8)
             {
                 return;

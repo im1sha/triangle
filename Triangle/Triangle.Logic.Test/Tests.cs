@@ -11,13 +11,13 @@ namespace Triangle.Logic.Test
     [TestFixture]
     public class Tests
     {
-        private Shape triangle;
+        private Logic.TypeDeterminer triangle;
         private ulong a, b, c;
 
         [SetUp]
         public void Init()
         {
-            triangle = new Shape();
+            triangle = new Logic.TypeDeterminer();
         }
 
         private bool[] Act(ulong a, ulong b, ulong c, Func<ulong, ulong, ulong, bool> func)
@@ -32,6 +32,9 @@ namespace Triangle.Logic.Test
             return result;
         }
 
+        // co
+
+
         private void CustomAssert(bool expexted, bool[] results)
         {
             foreach (var actual in results)
@@ -41,8 +44,8 @@ namespace Triangle.Logic.Test
         }
 
         //Triangle
-        [Test]
-        public void IsTriangle_NotTriangle()
+        [TestCase("5", ExpectedResult = "")]
+        public void IsTriangle_NotTriangle(ulong a)
         {
             a = 2; b = 3; c = 5;
             var results = Act(a, b, c, triangle.IsValidTriangle);
@@ -74,7 +77,6 @@ namespace Triangle.Logic.Test
             CustomAssert(true, results);
         }
 
-        //Isosceles
         [Test]
         public void IsIsosceles_AllEqual_true()
         {
