@@ -64,7 +64,6 @@
   <ItemGroup>
     <Compile Include="Negative.cs" />
     <Compile Include="Positive.cs" />
-    <Compile Include="Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
