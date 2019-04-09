@@ -7,11 +7,12 @@
     <ProjectGuid>{4E4EE93A-DF7E-4E57-A7F2-8FB770F706F1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Triangle.Logic</RootNamespace>
-    <AssemblyName>Triangle.Logic</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>Triangle.Core</RootNamespace>
+    <AssemblyName>Triangle.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,8 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InputParser.cs" />
-    <Compile Include="TypeDeterminer.cs" />
+    <Compile Include="Presenter\InputParser.cs" />
+    <Compile Include="Presenter\IPresenter.cs" />
+    <Compile Include="View\IView.cs" />
+    <Compile Include="Presenter\SideHandler.cs" />
+    <Compile Include="Presenter\TypeToMessageConverter.cs" />
+    <Compile Include="Presenter\MainPresenter.cs" />
+    <Compile Include="Model\TypeDeterminer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

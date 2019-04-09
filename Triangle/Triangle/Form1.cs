@@ -7,106 +7,69 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Triangle.Logic;
 
 namespace Triangle
 {
-
-      
-
-
-    public partial class Form1 : Form
+    public partial class Form1 : Form, Core.View.IView
     {
+        private readonly Core.Presenter.IPresenter presenter;
+
+        #region IView
+
+        public string SideA
+        {
+            get => textBoxA.Text;
+            private set { textBoxA.Text = value; }
+        }
+        public string SideB
+        {
+            get => textBoxB.Text;
+            private set { textBoxB.Text = value; }
+        }
+        public string SideC
+        {
+            get => textBoxC.Text;
+            private set { textBoxC.Text = value; }
+        }
+        public string Output
+        {
+            get => labelOutput.Text;
+            private set { labelOutput.Text = value; }
+        }
+
+        #endregion
+
+        public string[] LabelsNames { get => new[] { labelA.Text, labelB.Text, labelC.Text }; }
+
         public Form1()
         {
             InitializeComponent();
+            presenter = new Core.Presenter.MainPresenter(this);
         }
 
         private void OnCalculate(object sender, EventArgs e)
         {
-            var determiner = new TypeDeterminer();
-
-            ulong a = 0, b = 0, c = 0;
-
-            bool areLengthsPositive = HavePositiveLength(new[] { textBoxA.Text, textBoxB.Text, textBoxC.Text });
-
-            if (areLengthsPositive)
+            try
             {
-                a = Convert.ToUInt64(textBoxA.Text);
-                b = Convert.ToUInt64(textBoxB.Text);
-                c = Convert.ToUInt64(textBoxC.Text);
+                Output = presenter?.GetTriangleType(SideA, SideB, SideC, LabelsNames);
             }
-            else
-            { 
-                MessageBox.Show("Введите числовые значения длин для трех сторон треугольника. Значения длин сторон должны принадлежать промежутку от 1 до 9223372036854775807",
-                               "Ошибка ввода",
-                               MessageBoxButtons.OK,
-                               MessageBoxIcon.Error);
-                labelOutput.Text = "";
-                return;
-            }
-                            
-            if (!determiner.AreSidesInBounds(new[] { a, b, c }))
+            catch (ApplicationException ex)
             {
-                MessageBox.Show("Значения длин сторон должны принадлежать промежутку от 1 до 9223372036854775807",
-                               "Ошибка ввода",
-                               MessageBoxButtons.OK,
-                               MessageBoxIcon.Error);
-                labelOutput.Text = "";
-                return;
-            }
-
-
-            labelOutput.Text = GetResultString(determiner, a, b, c);
+                MessageBox.Show(ex.Message.ToString(), "Проверьте введенные данные");
+            }             
         }
-
-        private string GetResultString(TypeDeterminer determiner, ulong a, ulong b, ulong c)
-        {
-            string result;
-
-            if (!determiner.IsValidTriangle(a, b, c))
-            {
-                result =  "Введите такие значения длин сторон, для которых верно: сумма любых двух сторон больше третьей стороны";
-            }
-            else if (determiner.IsEquilateral(a, b, c))
-            {
-                result = "Равносторонний треугольник";
-            }
-            else if (determiner.IsIsosceles(a, b, c))
-            {
-                result = "Равнобедренный треугольник";
-            }
-            else
-            {
-                result = "Неравносторонний треугольник";
-            }
-
-            return result;
-        }
-
 
         private void OnKeyPress(object sender, KeyPressEventArgs e)
-        {       
-            if (e.KeyChar == (char)8)
-            {
-                return;
-            }
-
-            if ((sender is TextBox) && ((sender as TextBox).Text.Length == (ulong.MaxValue / 2).ToString().Length))
-            {
-                e.Handled = true; 
-            }
-
-            if (e.KeyChar < 48 || e.KeyChar > 57)
-            {
-                e.Handled = true;
-            }          
-        }
-
-        private bool HavePositiveLength(string[] strs)
         {
-            return strs.All(str => str != null && str.Length > 0);
-        }
+            if ((sender is TextBox) && presenter != null)
+            {
+                if (presenter.IsInputValid((sender as TextBox).Text, e.KeyChar))
+                {
+                    return;
+                }
+                e.Handled = true;
+            }
+        }  
     }
 }
 

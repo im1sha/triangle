@@ -16,6 +16,7 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -70,9 +71,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Triangle.Logic\Triangle.Logic.csproj">
+    <ProjectReference Include="..\Triangle.Logic\Triangle.Core.csproj">
       <Project>{4e4ee93a-df7e-4e57-a7f2-8fb770f706f1}</Project>
-      <Name>Triangle.Logic</Name>
+      <Name>Triangle.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
