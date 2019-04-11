@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Triangle.Core.Presenter;
 
-namespace Triangle.Logic.Test
+namespace Triangle.Logic.Tests
 {
     [TestFixture]
 
-    class InputChecks
+    class InputCheck
     {
-        private MainPresenter presenter = new MainPresenter(null);
-        private InputParser parser = new InputParser();
+        private readonly MainPresenter presenter = new MainPresenter(null);
+        private readonly InputParser parser = new InputParser();
 
         // alphabetical
         [TestCase("9223", 'e')]
@@ -29,14 +29,14 @@ namespace Triangle.Logic.Test
         [TestCase("9223", ',')]
         // non-writable
         [TestCase("9223", (char)9)]
-        public void ParserDeniedCharCheck(string str, char c)
+        public void CheckDeniedChar(string str, char c)
         {
             Assert.AreEqual(parser.IsInputValid(str, c), false);
         }
 
         [TestCase("9223372036854775801", '0')]
         [TestCase("9223372036854775801", '9')]
-        public void ParserTooLongStringCheck(string str, char c)
+        public void CheckTooLongString(string str, char c)
         {
             Assert.AreEqual(parser.IsInputValid(str, c), false);
         }
@@ -44,10 +44,9 @@ namespace Triangle.Logic.Test
         [TestCase("9223", '0')]
         [TestCase("9223", '9')]
         [TestCase("9223", (char)8)]
-        public void ParserAllowedCharCheck(string str, char c)
+        public void CheckAllowedChar(string str, char c)
         {
             Assert.AreEqual(parser.IsInputValid(str, c), true);
         }
-
     }
 }

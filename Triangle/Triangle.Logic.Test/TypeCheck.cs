@@ -9,12 +9,12 @@ using Triangle.Core.Model;
 using Triangle.Core.Presenter;
 
   
-namespace Triangle.Logic.Test
+namespace Triangle.Logic.Tests
 {
     [TestFixture]
-    class Type
+    class TypeCheck
     {
-        TypeDeterminer model = new TypeDeterminer();
+        private readonly TypeDeterminer model = new TypeDeterminer();
 
         [TestCase(SideHandler.MinValue, SideHandler.MinValue, SideHandler.MinValue, Core.Model.TriangleType.Equilateral)]
         [TestCase(6ul, 6ul, 6ul, Core.Model.TriangleType.Equilateral)]
@@ -50,7 +50,6 @@ namespace Triangle.Logic.Test
             Assert.AreEqual(type, model.GetTriangleType(b, c, a));
             Assert.AreEqual(type, model.GetTriangleType(c, b, a));
         }
-
     }
 }
 

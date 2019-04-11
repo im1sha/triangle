@@ -9,8 +9,8 @@
     <ProjectGuid>{4D7977E0-1B85-41F7-9F3B-0B125FB3ED72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Triangle.Logic.Test</RootNamespace>
-    <AssemblyName>Triangle.Logic.Test</AssemblyName>
+    <RootNamespace>Triangle.Logic.Tests</RootNamespace>
+    <AssemblyName>Triangle.Logic.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -62,10 +62,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelInput.cs" />
-    <Compile Include="Existence.cs" />
-    <Compile Include="InputChecks.cs" />
-    <Compile Include="Type.cs" />
+    <Compile Include="ModelInputCheck.cs" />
+    <Compile Include="ExistenceCheck.cs" />
+    <Compile Include="InputCheck.cs" />
+    <Compile Include="TypeCheck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
