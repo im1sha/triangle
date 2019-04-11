@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Triangle.Core.Presenter
 {
-    class InputParser
+    public class InputParser
     {
         public int MaxInputLength { get => SideHandler.MaxValue.ToString().Length; }
 

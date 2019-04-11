@@ -11,25 +11,44 @@ using Triangle.Core.Presenter;
 namespace Triangle.Logic.Test
 {
     [TestFixture]
-    class Negative
+    class ModelInput
     {
         private MainPresenter presenter = new MainPresenter(null);
         private string[] stringArgs = new string[] { string.Empty, string.Empty, string.Empty };
 
+        // spaces
         [TestCase("", "1", "1")]
+        [TestCase("1", "", "1")]
+        [TestCase("1", "1", "")]
+
         [TestCase("", "", "1")]
+        [TestCase("", "1", "")]
+        [TestCase("1", "", "")]
+
         [TestCase("", "", "")]
+        // nulls
         [TestCase("0", "1", "1")]
+        [TestCase("1", "0", "1")]
+        [TestCase("1", "1", "0")]
+
         [TestCase("0", "0", "1")]
+        [TestCase("0", "1", "0")]
+        [TestCase("1", "0", "0")]
+
         [TestCase("0", "0", "0")]
+        // out of bounds
         [TestCase("9223372036854775808", "9223372036854775808", "9223372036854775808")]
+
+        [TestCase("9223372036854775808", "9223372036854775808", "100")]
         [TestCase("9223372036854775808", "100", "9223372036854775808")]
+        [TestCase("100", "9223372036854775808", "9223372036854775808")]
+
         [TestCase("9223372036854775808", "100", "100")]
-        public void CheckInput(string a, string b, string c)
+        [TestCase("100", "9223372036854775808", "100")]
+        [TestCase("100", "100", "9223372036854775808")]
+        public void ModelInputCheck(string a, string b, string c)
         {
             Assert.Throws<ApplicationException>(() => presenter.GetTriangleType(a, b, c, stringArgs));
-            Assert.Throws<ApplicationException>(() => presenter.GetTriangleType(c, a, b, stringArgs));
-            Assert.Throws<ApplicationException>(() => presenter.GetTriangleType(b, c, a, stringArgs));
         }
     }
 }

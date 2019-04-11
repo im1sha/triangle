@@ -62,8 +62,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Negative.cs" />
-    <Compile Include="NotATriangle.cs" />
+    <Compile Include="ModelInput.cs" />
+    <Compile Include="Existence.cs" />
+    <Compile Include="InputChecks.cs" />
     <Compile Include="Type.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
