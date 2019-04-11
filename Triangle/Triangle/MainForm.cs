@@ -72,12 +72,27 @@ namespace Triangle
             }
         }
 
-        private void OnLeave(object sender, EventArgs e)
+        private void OnLeaveInput(object sender, EventArgs e)
         {
             if ((sender is TextBox) && presenter != null)
             {
                 (sender as TextBox).Text = presenter.HandleInput((sender as TextBox).Text);
             }
+        }
+
+        private void OnHelp(object sender, EventArgs e)
+        {
+            MessageBox.Show("Данная программа предназначена для определения типа треугольника.\n" +
+                "Для того чтобы узнать тип вашего треугольника введите в поля ввода \"Сторона А\", \"Сторона B\" и \"Сторона C\" " +
+                "целые положительные числа.\n" +
+                "Затем нажмите на кнопку \"Определить тип треугольника\".\n" +
+                "В нижней части окна приложения будет показан тип вашего треугольника.",
+                "Инструкция пользования программой");
+        }
+
+        private void OnExit(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

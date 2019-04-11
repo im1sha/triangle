@@ -35,8 +35,9 @@
             this.textBoxA = new System.Windows.Forms.TextBox();
             this.textBoxB = new System.Windows.Forms.TextBox();
             this.textBoxC = new System.Windows.Forms.TextBox();
-            this.labelHeader = new System.Windows.Forms.Label();
             this.labelOutput = new System.Windows.Forms.Label();
+            this.buttonHelp = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCalculate
@@ -85,7 +86,7 @@
             this.textBoxA.Size = new System.Drawing.Size(346, 22);
             this.textBoxA.TabIndex = 1;
             this.textBoxA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
-            this.textBoxA.Leave += new System.EventHandler(this.OnLeave);
+            this.textBoxA.Leave += new System.EventHandler(this.OnLeaveInput);
             // 
             // textBoxB
             // 
@@ -95,7 +96,7 @@
             this.textBoxB.Size = new System.Drawing.Size(346, 22);
             this.textBoxB.TabIndex = 2;
             this.textBoxB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
-            this.textBoxB.Leave += new System.EventHandler(this.OnLeave);
+            this.textBoxB.Leave += new System.EventHandler(this.OnLeaveInput);
             // 
             // textBoxC
             // 
@@ -105,18 +106,7 @@
             this.textBoxC.Size = new System.Drawing.Size(346, 22);
             this.textBoxC.TabIndex = 3;
             this.textBoxC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
-            this.textBoxC.Leave += new System.EventHandler(this.OnLeave);
-            // 
-            // labelHeader
-            // 
-            this.labelHeader.AutoSize = true;
-            this.labelHeader.Location = new System.Drawing.Point(30, 18);
-            this.labelHeader.MaximumSize = new System.Drawing.Size(420, 0);
-            this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(397, 34);
-            this.labelHeader.TabIndex = 7;
-            this.labelHeader.Text = "Введите стороны треугольника, затем нажмите на кнопку \"Определить тип треугольник" +
-    "а\"";
+            this.textBoxC.Leave += new System.EventHandler(this.OnLeaveInput);
             // 
             // labelOutput
             // 
@@ -127,13 +117,36 @@
             this.labelOutput.Size = new System.Drawing.Size(0, 17);
             this.labelOutput.TabIndex = 8;
             // 
+            // buttonHelp
+            // 
+            this.buttonHelp.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonHelp.Location = new System.Drawing.Point(33, 12);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(306, 34);
+            this.buttonHelp.TabIndex = 5;
+            this.buttonHelp.Text = "Инструкция пользования программой";
+            this.buttonHelp.UseVisualStyleBackColor = false;
+            this.buttonHelp.Click += new System.EventHandler(this.OnHelp);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(360, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 34);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Выйти";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.OnExit);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 272);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.labelOutput);
-            this.Controls.Add(this.labelHeader);
             this.Controls.Add(this.textBoxC);
             this.Controls.Add(this.textBoxB);
             this.Controls.Add(this.textBoxA);
@@ -160,8 +173,9 @@
         private System.Windows.Forms.TextBox textBoxA;
         private System.Windows.Forms.TextBox textBoxB;
         private System.Windows.Forms.TextBox textBoxC;
-        private System.Windows.Forms.Label labelHeader;
         private System.Windows.Forms.Label labelOutput;
+        private System.Windows.Forms.Button buttonHelp;
+        private System.Windows.Forms.Button button1;
     }
 }
 
