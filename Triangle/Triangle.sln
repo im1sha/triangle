@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle", "Triangle\Triang
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle.Core", "Triangle.Logic\Triangle.Core.csproj", "{4E4EE93A-DF7E-4E57-A7F2-8FB770F706F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle.Tests", "Triangle.Logic.Test\Triangle.Tests.csproj", "{4D7977E0-1B85-41F7-9F3B-0B125FB3ED72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle.Testing", "Triangle.Testing\Triangle.Testing.csproj", "{44D0B5E1-162C-48A7-990E-CAD5A3CA2BF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{4E4EE93A-DF7E-4E57-A7F2-8FB770F706F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E4EE93A-DF7E-4E57-A7F2-8FB770F706F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E4EE93A-DF7E-4E57-A7F2-8FB770F706F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D7977E0-1B85-41F7-9F3B-0B125FB3ED72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D7977E0-1B85-41F7-9F3B-0B125FB3ED72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D7977E0-1B85-41F7-9F3B-0B125FB3ED72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D7977E0-1B85-41F7-9F3B-0B125FB3ED72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D0B5E1-162C-48A7-990E-CAD5A3CA2BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D0B5E1-162C-48A7-990E-CAD5A3CA2BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D0B5E1-162C-48A7-990E-CAD5A3CA2BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D0B5E1-162C-48A7-990E-CAD5A3CA2BF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
