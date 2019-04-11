@@ -37,7 +37,8 @@
             this.textBoxC = new System.Windows.Forms.TextBox();
             this.labelOutput = new System.Windows.Forms.Label();
             this.buttonHelp = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonAbout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCalculate
@@ -49,7 +50,7 @@
             this.buttonCalculate.TabIndex = 4;
             this.buttonCalculate.Text = "Определить тип треугольника";
             this.buttonCalculate.UseVisualStyleBackColor = false;
-            this.buttonCalculate.Click += new System.EventHandler(this.OnCalculate);
+            this.buttonCalculate.Click += new System.EventHandler(this.OnGetType);
             // 
             // labelA
             // 
@@ -111,7 +112,7 @@
             // labelOutput
             // 
             this.labelOutput.AutoSize = true;
-            this.labelOutput.Location = new System.Drawing.Point(30, 241);
+            this.labelOutput.Location = new System.Drawing.Point(30, 250);
             this.labelOutput.MaximumSize = new System.Drawing.Size(420, 0);
             this.labelOutput.Name = "labelOutput";
             this.labelOutput.Size = new System.Drawing.Size(0, 17);
@@ -122,29 +123,41 @@
             this.buttonHelp.BackColor = System.Drawing.SystemColors.Control;
             this.buttonHelp.Location = new System.Drawing.Point(33, 12);
             this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(306, 34);
-            this.buttonHelp.TabIndex = 5;
+            this.buttonHelp.Size = new System.Drawing.Size(284, 34);
+            this.buttonHelp.TabIndex = 6;
             this.buttonHelp.Text = "Инструкция пользования программой";
             this.buttonHelp.UseVisualStyleBackColor = false;
             this.buttonHelp.Click += new System.EventHandler(this.OnHelp);
             // 
-            // button1
+            // buttonExit
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(360, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 34);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Выйти";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.OnExit);
+            this.buttonExit.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonExit.Location = new System.Drawing.Point(335, 242);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(124, 34);
+            this.buttonExit.TabIndex = 5;
+            this.buttonExit.Text = "Выйти";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.OnExit);
+            // 
+            // buttonAbout
+            // 
+            this.buttonAbout.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonAbout.Location = new System.Drawing.Point(335, 12);
+            this.buttonAbout.Name = "buttonAbout";
+            this.buttonAbout.Size = new System.Drawing.Size(124, 34);
+            this.buttonAbout.TabIndex = 7;
+            this.buttonAbout.Text = "О программе";
+            this.buttonAbout.UseVisualStyleBackColor = false;
+            this.buttonAbout.Click += new System.EventHandler(this.OnAbout);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 272);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(486, 289);
+            this.Controls.Add(this.buttonAbout);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.labelOutput);
             this.Controls.Add(this.textBoxC);
@@ -175,7 +188,8 @@
         private System.Windows.Forms.TextBox textBoxC;
         private System.Windows.Forms.Label labelOutput;
         private System.Windows.Forms.Button buttonHelp;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button buttonAbout;
     }
 }
 

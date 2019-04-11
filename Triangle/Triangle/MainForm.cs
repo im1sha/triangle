@@ -47,7 +47,7 @@ namespace Triangle
             presenter = new Core.Presenter.MainPresenter(this);
         }
 
-        private void OnCalculate(object sender, EventArgs e)
+        private void OnGetType(object sender, EventArgs e)
         {
             try
             {
@@ -82,12 +82,19 @@ namespace Triangle
 
         private void OnHelp(object sender, EventArgs e)
         {
-            MessageBox.Show("Данная программа предназначена для определения типа треугольника.\n" +
-                "Для того чтобы узнать тип вашего треугольника введите в поля ввода \"Сторона А\", \"Сторона B\" и \"Сторона C\" " +
+            MessageBox.Show("Для того чтобы узнать тип вашего треугольника введите " +
+                "в поля ввода \"Сторона А\", \"Сторона B\" и \"Сторона C\" " +
                 "целые положительные числа.\n" +
                 "Затем нажмите на кнопку \"Определить тип треугольника\".\n" +
                 "В нижней части окна приложения будет показан тип вашего треугольника.",
                 "Инструкция пользования программой");
+        }
+
+        
+        private void OnAbout(object sender, EventArgs e)
+        {
+            MessageBox.Show("Данная программа предназначена для определения типа треугольника.\n\n" +
+                "2019, Михаил Овчелупов", "О программе");
         }
 
         private void OnExit(object sender, EventArgs e)
