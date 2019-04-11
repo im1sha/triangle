@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Triangle
 {
-    public partial class Form1 : Form, Core.View.IView
+    public partial class MainForm : Form, Core.View.IView
     {
         private readonly Core.Presenter.IPresenter presenter;
 
@@ -41,7 +41,7 @@ namespace Triangle
 
         public string[] LabelsNames { get => new[] { labelA.Text, labelB.Text, labelC.Text }; }
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             presenter = new Core.Presenter.MainPresenter(this);
@@ -55,6 +55,7 @@ namespace Triangle
             }
             catch (ApplicationException ex)
             {
+                Output = string.Empty;
                 MessageBox.Show(ex.Message.ToString(), "Проверьте введенные данные");
             }             
         }
@@ -63,13 +64,21 @@ namespace Triangle
         {
             if ((sender is TextBox) && presenter != null)
             {
-                if (presenter.IsInputValid((sender as TextBox).Text, e.KeyChar))
+                if (presenter.IsInputCharValid((sender as TextBox).Text, e.KeyChar))
                 {
                     return;
                 }
                 e.Handled = true;
             }
-        }  
+        }
+
+        private void OnLeave(object sender, EventArgs e)
+        {
+            if ((sender is TextBox) && presenter != null)
+            {
+                (sender as TextBox).Text = presenter.HandleInput((sender as TextBox).Text);
+            }
+        }
     }
 }
 

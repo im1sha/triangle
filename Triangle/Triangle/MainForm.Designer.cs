@@ -1,6 +1,6 @@
 ﻿namespace Triangle
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -41,12 +41,13 @@
             // 
             // buttonCalculate
             // 
+            this.buttonCalculate.BackColor = System.Drawing.SystemColors.Control;
             this.buttonCalculate.Location = new System.Drawing.Point(33, 197);
             this.buttonCalculate.Name = "buttonCalculate";
             this.buttonCalculate.Size = new System.Drawing.Size(426, 34);
             this.buttonCalculate.TabIndex = 4;
             this.buttonCalculate.Text = "Определить тип треугольника";
-            this.buttonCalculate.UseVisualStyleBackColor = true;
+            this.buttonCalculate.UseVisualStyleBackColor = false;
             this.buttonCalculate.Click += new System.EventHandler(this.OnCalculate);
             // 
             // labelA
@@ -84,6 +85,7 @@
             this.textBoxA.Size = new System.Drawing.Size(346, 22);
             this.textBoxA.TabIndex = 1;
             this.textBoxA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
+            this.textBoxA.Leave += new System.EventHandler(this.OnLeave);
             // 
             // textBoxB
             // 
@@ -93,6 +95,7 @@
             this.textBoxB.Size = new System.Drawing.Size(346, 22);
             this.textBoxB.TabIndex = 2;
             this.textBoxB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
+            this.textBoxB.Leave += new System.EventHandler(this.OnLeave);
             // 
             // textBoxC
             // 
@@ -102,6 +105,7 @@
             this.textBoxC.Size = new System.Drawing.Size(346, 22);
             this.textBoxC.TabIndex = 3;
             this.textBoxC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
+            this.textBoxC.Leave += new System.EventHandler(this.OnLeave);
             // 
             // labelHeader
             // 
@@ -123,11 +127,11 @@
             this.labelOutput.Size = new System.Drawing.Size(0, 17);
             this.labelOutput.TabIndex = 8;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 293);
+            this.ClientSize = new System.Drawing.Size(486, 272);
             this.Controls.Add(this.labelOutput);
             this.Controls.Add(this.labelHeader);
             this.Controls.Add(this.textBoxC);
@@ -140,7 +144,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Определение типа треугольника";
             this.ResumeLayout(false);
             this.PerformLayout();

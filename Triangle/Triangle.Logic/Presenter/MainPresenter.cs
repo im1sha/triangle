@@ -55,7 +55,12 @@ namespace Triangle.Core.Presenter
             return TypeToMessageConverter.GetMessageByTriangleType(model.GetTriangleType(sides[0], sides[1], sides[2]));
         }
 
-        public bool IsInputValid(string currentString, char newChar)
+        public string HandleInput(string text)
+        {
+            return inputParser.DeleteNulls(text);
+        }
+
+        public bool IsInputCharValid(string currentString, char newChar)
         {
             return inputParser.IsInputValid(currentString, newChar);
         }

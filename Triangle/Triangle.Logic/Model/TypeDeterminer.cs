@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Triangle.Core.Model
 {
-    public enum TriangleType { Invalid, Isosceles, Equilateral, Scalene }
+    public enum TriangleType { Isosceles, Equilateral, Scalene }
 
     public class TypeDeterminer
     {
@@ -14,7 +14,8 @@ namespace Triangle.Core.Model
         {
             if (!IsValidTriangle(a, b, c))
             {
-                return TriangleType.Invalid;
+                throw new ApplicationException( "Введите такие значения длин сторон, для которых верно:" +
+                    " сумма любых двух сторон больше третьей стороны");
             }
 
             if (IsEquilateral(a, b, c))

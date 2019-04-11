@@ -9,9 +9,6 @@ namespace Triangle.Core.Presenter
 {
     public static class TypeToMessageConverter
     {
-        private const string INVALID_TRINGLE_MESSAGE = 
-            "Введите такие значения длин сторон, для которых верно:" +
-            " сумма любых двух сторон больше третьей стороны";
         private const string EQUILATERAL_TRIANGLE_MESSAGE = "Равносторонний треугольник";
         private const string ISOSCELES_TRIANGLE_MESSAGE = "Равнобедренный треугольник";
         private const string SCALENE_TRIANGLE_MESSAGE = "Неравносторонний треугольник";
@@ -20,8 +17,6 @@ namespace Triangle.Core.Presenter
         {
             switch (triangleType)
             {
-                case TriangleType.Invalid:
-                    return INVALID_TRINGLE_MESSAGE;
                 case TriangleType.Isosceles:
                     return ISOSCELES_TRIANGLE_MESSAGE;
                 case TriangleType.Equilateral:

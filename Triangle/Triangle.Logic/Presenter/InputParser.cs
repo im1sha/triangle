@@ -26,5 +26,16 @@ namespace Triangle.Core.Presenter
 
             return newChar >= '0' && newChar <= '9';
         }
+
+        internal string DeleteNulls(string text)
+        {
+            if (text.All(ch => ch == '0'))
+            {
+                return string.Empty;
+            }
+            char[] textAsArray = text.ToArray();
+            int startIndex = Array.FindIndex(textAsArray, 0, ch => ch != '0');
+            return new string(textAsArray, startIndex, text.Length - startIndex);
+        }
     }
 }

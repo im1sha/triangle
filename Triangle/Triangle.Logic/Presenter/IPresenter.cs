@@ -8,8 +8,9 @@ namespace Triangle.Core.Presenter
 {
     public interface IPresenter
     {
-        bool IsInputValid(string currentString, char newChar);
+        bool IsInputCharValid(string currentString, char newChar);
         string GetTriangleType(string sideA, string sideB, string sideC, string[] inputNames);
+        string HandleInput(string text);
     }
 }
 
