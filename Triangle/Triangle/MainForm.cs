@@ -87,7 +87,9 @@ namespace Triangle
                 "в поля ввода \"Сторона А\", \"Сторона B\" и \"Сторона C\" " +
                 "целые положительные числа.\n" +
                 "Затем нажмите на кнопку \"Определить тип треугольника\".\n" +
-                "В нижней части окна приложения будет показан тип вашего треугольника.",
+                "В нижней части окна приложения будет показан тип вашего треугольника\n\n" + 
+                "Для сохранения введенных сторон нажмите кнопку \"Сохранить введенные стороны\".\n" +
+                "Для загрузки ранее введенных сторон нажмите кнопку \"Загрузить введенные стороны\".", 
                 "Инструкция пользования программой");
         }
 
@@ -103,10 +105,10 @@ namespace Triangle
             try
             {
                 string[] deserializedData = serializer.Deserialize().Strings;
-                SideA = deserializedData[0];
-                SideB = deserializedData[1];
                 SideC = deserializedData[2];
-                MessageBox.Show("Стороны треугольника загружены", "Загрузка треугольника");
+                SideB = deserializedData[1];
+                SideA = deserializedData[0];
+                MessageBox.Show("Стороны треугольника загружены", "Загрузка введенных сторон");
             }
             catch
             {
@@ -114,12 +116,12 @@ namespace Triangle
             }
         }
 
-        private void OnSave(object sender, EventArgs e)
+        private void OnSave(object sender, EventArgs e) 
         {
             try
             {
                 serializer.Serialize(new Core.Model.InputSerializer.Input(new[] { SideA, SideB, SideC }));
-                MessageBox.Show("Стороны треугольника сохранены", "Сохранение треугольника");
+                MessageBox.Show("Стороны треугольника сохранены", "Сохранение введенных сторон");
             }
             catch 
             {

@@ -28,7 +28,7 @@ namespace Triangle.Core.Model
 
         public void Serialize(Input input, string file = defaultFileName)
         {
-            using (FileStream fs = new FileStream(file, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(file, FileMode.Create))
             {
                 jsonFormatter.WriteObject(fs, input);
             }
