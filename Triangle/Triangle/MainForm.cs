@@ -13,6 +13,7 @@ namespace Triangle
     public partial class MainForm : Form, Core.View.IView
     {
         private readonly Core.Presenter.IPresenter presenter;
+        private readonly Core.Model.InputSerializer serializer = new Core.Model.InputSerializer();
 
         #region IView
 
@@ -95,6 +96,35 @@ namespace Triangle
         {
             MessageBox.Show("Данная программа предназначена для определения типа треугольника.\n\n" +
                 "2019, Михаил Овчелупов", "О программе");
+        }
+
+        private void OnLoad(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] deserializedData = serializer.Deserialize().Strings;
+                SideA = deserializedData[0];
+                SideB = deserializedData[1];
+                SideC = deserializedData[2];
+                MessageBox.Show("Стороны треугольника загружены", "Загрузка треугольника");
+            }
+            catch
+            {
+                MessageBox.Show("Не найдено сохраненных данных", "Ошибка загрузки");
+            }
+        }
+
+        private void OnSave(object sender, EventArgs e)
+        {
+            try
+            {
+                serializer.Serialize(new Core.Model.InputSerializer.Input(new[] { SideA, SideB, SideC }));
+                MessageBox.Show("Стороны треугольника сохранены", "Сохранение треугольника");
+            }
+            catch 
+            {
+                MessageBox.Show("Пожалуйста, проверьте введенные данные", "Ошибка сохранения");
+            }
         }
 
         private void OnExit(object sender, EventArgs e)

@@ -162,6 +162,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Сохранить введенные стороны";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.OnSave);
             // 
             // LoadButton
             // 
@@ -172,6 +173,7 @@
             this.LoadButton.TabIndex = 10;
             this.LoadButton.Text = "Загрузить введенные стороны";
             this.LoadButton.UseVisualStyleBackColor = false;
+            this.LoadButton.Click += new System.EventHandler(this.OnLoad);
             // 
             // MainForm
             // 

@@ -50,7 +50,7 @@ namespace Triangle.Core.Presenter
             if (InputErrors.Count > 0)
             {
                 throw new ApplicationException(string.Join("\n", InputErrors)); 
-            }
+            }       
 
             return TypeToMessageConverter.GetMessageByTriangleType(model.GetTriangleType(sides[0], sides[1], sides[2]));
         }
