@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Triangle.Core.Presenter;
 
-namespace Triangle.Logic.Testing
+namespace Triangle.Testing
 {
     [TestFixture]
 

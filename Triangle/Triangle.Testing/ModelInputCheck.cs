@@ -8,13 +8,13 @@ using NUnit.Framework;
 using Triangle.Core.Model;
 using Triangle.Core.Presenter;
 
-namespace Triangle.Logic.Testing
+namespace Triangle.Testing
 {
     [TestFixture]
     class ModelInputCheck
     {
         private MainPresenter presenter = new MainPresenter(null);
-        private string[] stringArgs = new string[] { string.Empty, string.Empty, string.Empty };
+        private readonly string[] stringArgs = { string.Empty, string.Empty, string.Empty };
 
         // spaces
         [TestCase("", "1", "1")]

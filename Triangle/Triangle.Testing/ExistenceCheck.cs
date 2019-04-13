@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 using Triangle.Core.Model;
 using Triangle.Core.Presenter;
 
-namespace Triangle.Logic.Testing
+namespace Triangle.Testing
 {
     [TestFixture]
     class ExistenceCheck
     {
         private readonly MainPresenter presenter = new MainPresenter(null);
-        private readonly string[] stringArgs = new string[] { string.Empty, string.Empty, string.Empty };
+        private readonly string[] stringArgs = { string.Empty, string.Empty, string.Empty };
 
         // third side is grater than first one + second one 
         [TestCase("1", "2", "4")]

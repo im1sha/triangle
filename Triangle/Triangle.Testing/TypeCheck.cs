@@ -9,7 +9,7 @@ using Triangle.Core.Model;
 using Triangle.Core.Presenter;
 
   
-namespace Triangle.Logic.Testing
+namespace Triangle.Testing
 {
     [TestFixture]
     class TypeCheck
